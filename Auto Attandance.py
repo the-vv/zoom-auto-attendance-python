@@ -1,5 +1,10 @@
-import pyautogui
 import sys
+try:
+    import pyautogui
+except ModuleNotFoundError:
+    print('Unable to start, Pls install pyautogui module, then restart')
+    x = input('press enter to exit')
+    sys.exit()
 print('Zoom auto attendance Bot\nStarted...\nPress Ctrl + c to stop')
 print('-------------------------')
 while not pyautogui.locateOnScreen('images/chatbox.png'):
